@@ -14,3 +14,15 @@ document
       alert("Mohon lengkapi semua field!");
     }
   });
+
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading");
+
+  setTimeout(() => {
+    loadingScreen.classList.add("hidden");
+
+    setTimeout(() => {
+      loadingScreen.style.display = "none";
+    }, 500);
+  }, 3000);
+});
