@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({
+    duration: 1000, // Durasi animasi dalam milidetik
+  });
+});
+
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (e) {
