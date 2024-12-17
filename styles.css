@@ -240,3 +240,22 @@ footer p {
   opacity: 0;
   pointer-events: none;
 }
+
+/* magic mouse */
+/* Magic Mouse */
+.magic-mouse {
+  pointer-events: none;
+  z-index: 9999;
+  position: fixed;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7); /* Warna lingkaran luar */
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
+}
+
+.magic-mouse-outer {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff; /* Warna lingkaran dalam */
+}
