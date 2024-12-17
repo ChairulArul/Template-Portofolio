@@ -1,20 +1,19 @@
 // aos code config js
 document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
-    duration: 1000, // Durasi animasi dalam milidetik
+    duration: 1000, 
   });
 });
 
 // magic mouse config js
 document.addEventListener("DOMContentLoaded", function () {
-  // Inisialisasi MagicMouse setelah konten di-load
   new MagicMouse({
-    cursorOuter: "circle-basic", // Kursor luar
-    hoverEffect: "pointer-overlay", // Efek hover
-    hoverItemMove: false, // Apakah elemen ikut bergerak
-    defaultCursor: false, // Menonaktifkan kursor default browser
-    outerWidth: 30, // Ukuran kursor luar
-    outerHeight: 30, // Ukuran kursor luar
+    cursorOuter: "circle-basic", 
+    hoverEffect: "pointer-overlay", 
+    hoverItemMove: false, 
+    defaultCursor: false, 
+    outerWidth: 30, 
+    outerHeight: 30, 
   });
 });
 
