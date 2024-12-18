@@ -35,7 +35,7 @@ header nav ul {
 
 header nav ul li {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 header nav ul li a {
@@ -68,7 +68,7 @@ section {
 #about h2,
 #projects h2,
 #contact h2 {
-  color: #222;
+  /* color: #222; */
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -136,7 +136,7 @@ footer {
 .about-image img {
   width: 100%;
   max-width: 300px;
-  border-radius: 50%;
+  border-radius: 5%;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -248,7 +248,7 @@ footer p {
   z-index: 9999;
   position: fixed;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.7); /* Warna lingkaran luar */
+  background-color: rgba(0, 0, 0, 0.7);
   mix-blend-mode: difference;
   transition: transform 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
 }
@@ -257,5 +257,267 @@ footer p {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #fff; /* Warna lingkaran dalam */
+  background-color: #fff;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: #333;
+  color: white;
+}
+
+nav ul li a {
+  color: white;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+header.dark-mode {
+  background-color: #222;
+  color: #e0e0e0;
+}
+
+nav ul li a.dark-mode {
+  color: #e0e0e0;
+}
+
+button#dark-mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+button#dark-mode-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Struktur header */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Tombol Dark Mode */
+button#dark-mode-toggle {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+button#dark-mode-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Responsif: Tampilan mobile */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  button#dark-mode-toggle {
+    margin: 10px 0 0 0;
+  }
+}
+
+/* konfigurasi teks putih */
+/* Dark mode: teks */
+body.dark-mode,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode a {
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #50b3a2;
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #ffffff;
+}
+
+body.dark-mode .project-card {
+  background-color: #333;
+  color: #ffffff;
+}
+
+body.dark-mode .project-card:hover {
+  background-color: #444;
+}
+
+body.dark-mode #contact input,
+body.dark-mode #contact textarea {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark-mode #contact button {
+  background-color: #444;
+  color: #ffffff;
+}
+
+body.dark-mode #contact button:hover {
+  background-color: #555;
+}
+
+body.dark-mode footer {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* hamburger icon */
+
+/* Default: navigasi tidak terlihat untuk layar kecil */
+#navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#hamburger-icon {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+}
+/* Animasi smooth muncul dan menghilang */
+#menu {
+  position: absolute;
+  top: 60px; /* Sesuaikan dengan tinggi header */
+  right: 20px;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+#menu.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Atur ul dan li di dalam menu */
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+#menu li {
+  padding: 10px 20px;
+}
+
+#menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+#menu li:hover {
+  background-color: #f4f4f4;
 }
